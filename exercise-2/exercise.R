@@ -16,7 +16,7 @@ CompareLength(2,3)
 DescribeDifference <- function(c,d) {
   diff <- (c - d)
   if (diff < 0) {
-    answer <- paste("Your second vector is longer by", diff, "elements")
+    answer <- paste("Your second vector is longer by", diff*(-1), "elements")
   }
   if (diff > 0) {
     answer <- paste("Your first vector is longer by", diff, "elements")
@@ -31,13 +31,16 @@ DescribeDifference(5,2)
 ### Bonus ###
 
 # Rewrite your `DescribeDifference` function to tell you the name of the vector which is longer
-DescribeDifference <- function(c,d) {
+DescribeDifference2 <- function(c,d) {
   diff <- (c - d)
   if (diff < 0) {
-    answer <- paste("Your second vector is longer by", diff, "elements")
+    answer <- paste("Your second vector, ", d, ", is longer", sep = "")
   }
   if (diff > 0) {
-    answer <- paste("Your first vector is longer by", diff, "elements")
+    answer <- paste("Your first vector, ",c, ", is longer", sep = "")
   }
   return(answer)
 }
+
+DescribeDifference2(2,3)
+DescribeDifference2(7,2)
